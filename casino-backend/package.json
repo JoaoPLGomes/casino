@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for casino using node",
+  "main": "index.js",
+  "author": "Joao",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
