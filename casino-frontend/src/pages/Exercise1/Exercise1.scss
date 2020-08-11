@@ -1,0 +1,23 @@
+.exercise1{
+
+  &__container{
+    width: 100%;
+    height: calc(100% - 80px);
+    margin-top: 80px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+  }
+
+  &__title{
+    line-height: 30px;
+    font-size: 1.25rem;
+    margin-top: 10px;
+    display: block;
+  }
+
+  &__form{
+    display: block;
+    margin-top: 20px;
+  }
+}
