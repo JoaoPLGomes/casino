@@ -1,24 +1,29 @@
 const express = require('express');
-var request = require('request');
+const axios = require('axios')
 const app = express();
 
 const BASE_URL = `https://restcountries.eu/rest/v2/name/{name}`;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
+const fetchURL = (url) => axios.get(url).catch(err => 'No results');
 
-app.get('/testRest', (req, res) => {
-  request({
-    method: 'GET',
-    uri: BASE_URL.replace('{name}',req.query.name),
-  }, function (error, response, body){
-    if(!error && response.statusCode == 200){
-      res.json(body);
-    }
+// Exercise 1
+app.get('/CountriesRest', (req, res) => {
+  axios.get(BASE_URL.replace('{name}',req.query.name))
+  .then((response) => {
+    res.json(response.data);
   })
 });
 
+// Exercise 2
+app.get('/CountriesRestArray', (req, res) => {
+  const arr = req.query.array.split(',').map(val => fetchURL(BASE_URL.replace('{name}',val)));
+  Promise.all(arr)
+  .then((data) => {
+    res.json(data.map(obj => obj.data ? obj.data.map(arrObj => arrObj.name) : null))
+  })
+  .catch((err) => console.log(err));
+});
+
 app.listen(8000, () => {
-  console.log('Example app listening on port 8000!')
+  console.log('Casino app listening on port 8000!')
 });
