@@ -20,4 +20,16 @@
     display: block;
     margin-top: 20px;
   }
+
+  &-countries__container{
+    position: absolute;
+    top: 200px;
+    width: 100%;
+  }
+
+  &__country{
+    color: white;
+    margin: 10px;
+    display: inline-block;
+  }
 }

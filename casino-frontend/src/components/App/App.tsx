@@ -5,7 +5,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { Exercise1 } from '../../pages/Exercise1/Exercise1';
+import  Exercise1 from '../../pages/Exercise1/Exercise1';
+import Exercise2 from '../../pages/Exercise2/Exercise2';
+import { Exercise4 } from '../../pages/Exercise4/Exercise4';
 
 function App() {
   return (
@@ -18,10 +20,10 @@ function App() {
           <Exercise1 />
         </Route>
         <Route path="/Exercise2">
-        </Route>
-        <Route path="/Exercise3">
+          <Exercise2 />
         </Route>
         <Route path="/Exercise4">
+          <Exercise4/>
         </Route>
       </Switch>
     </>

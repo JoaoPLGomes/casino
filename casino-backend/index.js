@@ -1,13 +1,16 @@
 const express = require('express');
-const axios = require('axios')
+const axios = require('axios');
+const cors = require('cors');
 const app = express();
+
+app.use(cors())
 
 const BASE_URL = `https://restcountries.eu/rest/v2/name/{name}`;
 
 const fetchURL = (url) => axios.get(url).catch(err => 'No results');
 
 // Exercise 1
-app.get('/CountriesRest', (req, res) => {
+app.get('/api/v1/CountriesRest', (req, res) => {
   axios.get(BASE_URL.replace('{name}',req.query.name))
   .then((response) => {
     res.json(response.data);
@@ -15,7 +18,7 @@ app.get('/CountriesRest', (req, res) => {
 });
 
 // Exercise 2
-app.get('/CountriesRestArray', (req, res) => {
+app.get('/api/v1/CountriesRestArray', (req, res) => {
   const arr = req.query.array.split(',').map(val => fetchURL(BASE_URL.replace('{name}',val)));
   Promise.all(arr)
   .then((data) => {
