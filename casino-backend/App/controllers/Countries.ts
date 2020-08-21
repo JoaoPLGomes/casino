@@ -5,7 +5,7 @@ import axios from 'axios';
 import validator from 'validator';
 import { BASE_URL } from '../contants';
 
-const fetchURL = (url: string) => axios.get(url).catch((err) => console.log(err));
+const fetchURL = (url: string) => axios.get(url).catch(() => []);
 
 export const list_countries = (req: express.Request, res: express.Response) => {
   if (validator.isAlpha(<string>req.query.name)) {
@@ -26,11 +26,12 @@ export const list_countries = (req: express.Request, res: express.Response) => {
       console.log(err.config);
     });
   } else {
-    res.json([])
+    res.json([]);
   }
 };
 
 export const list_array_countries = (req: express.Request, res: express.Response) => {
+  if (validator.isAscii(<string>req.query.array)) {
     const arr: any[] = (req.query.array as string)
         ?.split(',')
         .map((val: string) => fetchURL(BASE_URL.replace('{name}', val)));
@@ -50,4 +51,7 @@ export const list_array_countries = (req: express.Request, res: express.Response
           }
           console.log(err.config);
         });
+  } else {
+    res.json([]);
+  }
 };
