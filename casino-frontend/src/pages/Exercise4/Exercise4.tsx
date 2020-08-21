@@ -78,7 +78,7 @@ export class Exercise4 extends React.Component<any> {
                             Click to Play
                         </button>
 
-                        <span className="exercise4__result">Result: {this.state.coinsGained}</span>
+                        <span className="exercise4__result">Result: {this.state.coinsGained} {this.state.coinsGained !== '' && (<span>coins gained</span>)}</span>
                     </div>
                 </div>
             </>

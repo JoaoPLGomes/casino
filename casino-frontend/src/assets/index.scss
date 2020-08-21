@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.search__container{
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+  border: none;
+  border-bottom: 2px rgb(42, 8, 121) solid;
+  background-color: transparent;
+  color: black;
+
+  &:focus{
+    outline: none;
+  }
+
+}
+
+.search__button{
+  height: 55px;
+  width: 80px;
+  background-color: transparent;
+  margin-left: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid rgb(42, 8, 121);
+  display: none; // For now stays hidden
+
+  &:hover{
+    background-color: rgba(128, 128, 128, 0.144);
+  }
+}

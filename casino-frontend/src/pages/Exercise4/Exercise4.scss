@@ -31,4 +31,16 @@
     margin: 20px 0;
     font-size: 1.5rem;
   }
+
+  &__button{
+    height: 50px;
+    border-radius: 3px;
+    border: 2px solid rgb(42, 8, 121);
+    background-color: transparent;
+
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }

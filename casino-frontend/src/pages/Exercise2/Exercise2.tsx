@@ -23,17 +23,16 @@ export const Exercise2 = ({ addCountries, getCountries }: any) => {
 
                 <form className="exercise2__form" onSubmit={handleSubmit}>
                     <label>
-                        Names: (Separate countries by ',')
-                        <input type="text" name="name" value={value} onChange={handleChange} />
+                        <input type="text" name="name" value={value} className="search__container" onChange={handleChange} placeholder="Separate countries by ','"/>
                     </label>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" className="search__button" value="Search" />
                 </form>
             </div>
             <div className="exercise2-countries__container">
-                {getCountries.map((country: string, i: number) => (
-                    <span className="exercise2__country" key={i}>
-                        {country}
-                    </span>
+                {getCountries.map((countries: string[]) => (
+                  <div className="exercise2-country__container">
+                    {countries?.map((country: string,j: number) =>  <span className="exercise2__country" key={j}>{country}</span>)}
+                  </div>
                 ))}
             </div>
         </>

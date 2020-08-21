@@ -28,8 +28,14 @@
   }
 
   &__country{
-    color: white;
+    color: black;
     margin: 10px;
     display: inline-block;
+  }
+
+  &-country__container{
+    border: 2px rgb(42, 8, 121) solid;
+    margin: 10px;
+    border-radius: 3px;
   }
 }

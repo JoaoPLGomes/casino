@@ -23,10 +23,9 @@ export const Exercise1 = ({ addCountries, getCountries }: any) => {
 
                 <form className="exercise1__form" onSubmit={handleSubmit}>
                     <label>
-                        Name of Country:
-                        <input type="text" name="name" value={value} onChange={handleChange} />
+                        <input className="search__container" type="text" name="name" value={value} onChange={handleChange} placeholder="Hit enter to search for a country name"/>
                     </label>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" className="search__button" value="Search"/>
                 </form>
             </div>
             <div className="exercise1-countries__container">
