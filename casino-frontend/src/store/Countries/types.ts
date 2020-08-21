@@ -1,7 +1,7 @@
-export interface PropsCountriesReducerType{
-  objs: any[];
+export interface PropsCountriesReducerType {
+    objs: any[];
 }
 
 export interface CountriesReducerType {
-  countries: PropsCountriesReducerType;
+    countries: PropsCountriesReducerType;
 }

@@ -3,15 +3,15 @@ import { handleActions } from 'redux-actions';
 import { PropsCountriesReducerType } from './types';
 
 export const initialState: PropsCountriesReducerType = {
-  objs: [],
+    objs: [],
 };
 
 export const CountriesReducer = handleActions<any>(
-  {
-    ADD_COUNTRIES: (state: PropsCountriesReducerType, action: any) => ({
-      ...state,
-      objs: action.payload.countries,
-    }),
-  },
-  initialState
+    {
+        ADD_COUNTRIES: (state: PropsCountriesReducerType, action: any) => ({
+            ...state,
+            objs: action.payload.countries,
+        }),
+    },
+    initialState,
 );

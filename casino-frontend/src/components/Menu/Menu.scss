@@ -1,19 +1,21 @@
 .menu__container{
-  border-bottom: 1px solid white;
-  position: absolute;
-  width: 100%;
+  position: relative;
   height: 80px;
   top: 0;
-
+  padding-right: 30px;
+  display: block;
 }
 
 .menu__link{
-  color: white;
+  color: rgb(125, 131, 134);
   margin: 30px 10px;
   position: relative;
-  display: inline-block;
+  text-decoration: none;
+  float: right;
+  font-size: 1.2rem;
 }
 
 .menu-link_active{
-  color: gray;
+  padding-bottom: 2px;
+  border-bottom: 2px rgb(42, 8, 121) solid;
 }
